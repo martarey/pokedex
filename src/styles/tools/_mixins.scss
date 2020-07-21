@@ -1,0 +1,25 @@
+$dev-list: (
+	sm: 768,
+	md: 1024,
+    lg: 1200
+);
+
+/**
+ * Breakpoints declaration (mobile first)
+ */
+@mixin breakpoints($device) {
+	@if map-has-key($dev-list, $device) {
+		$min: map-get($dev-list, $device);
+		@media screen and (min-width: #{$min}px) {
+			@content;
+		}
+	}
+}
+
+/**
+ * Font size and line height calculator
+ */
+@mixin font-sizes($size) {
+    font-size: $size;
+    line-height: calc(#{$size} * 1.25);
+}

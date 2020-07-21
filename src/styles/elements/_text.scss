@@ -1,0 +1,42 @@
+%heading {
+    margin-bottom: .5rem;
+    font-weight: 700;
+    color: $c-heading;
+}
+
+%heading--h1 {
+    @include font-sizes(3.6rem);
+}
+
+%heading--h2 {
+    @include font-sizes(2.4rem);
+}
+
+%heading--h3 {
+    @include font-sizes(1.8rem);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @extend %heading;
+}
+
+h1 {
+    @extend %heading--h1;
+}
+
+h2 {
+    @extend %heading--h2;
+}
+
+h3 {
+    @extend %heading--h3;
+}
+
+p {
+    font-size: 1.6rem;
+}
