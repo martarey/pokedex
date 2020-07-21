@@ -1,0 +1,9 @@
+.o- {
+    &grid {
+        margin: 3rem;
+        display: grid;
+        grid-template-columns: repeat(3, 32rem);
+        grid-gap: 3rem;
+        justify-content: center;
+    }
+}
