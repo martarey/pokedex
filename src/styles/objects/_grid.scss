@@ -1,0 +1,15 @@
+.o- {
+    &grid {
+        margin: 3rem;
+        display: grid;
+        grid-gap: 3rem;
+        justify-content: center;
+        grid-template-columns: 1fr;
+        @include breakpoints(sm) {
+            grid-template-columns: repeat(2, minmax(32rem, 1fr));
+        }
+        @include breakpoints(md) {
+            grid-template-columns: repeat(3, minmax(26rem, 32rem));
+        }
+    }
+}

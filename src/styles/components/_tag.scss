@@ -1,0 +1,9 @@
+.tag {
+    display: inline-block;
+    padding: .5rem;
+    border-radius: .8rem;
+    border: 1px solid;
+    &:not(:first-child) {
+        margin-left: .5rem;
+    }
+}
