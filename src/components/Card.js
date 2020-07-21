@@ -1,10 +1,10 @@
 import React from 'react';
-import useFetch from '../hooks/useFetch';
+import useLocalData from 'hooks/useLocalData';
 import Evolutions from './Evolutions';
 
 const Card = ({item}) => {
 
-    const { data, loading } = useFetch(item.url);
+    const { data, loading } = useLocalData(item.url);
 
     if (loading) {
         return <div className="card">Cargando datos del Pokemon...</div>

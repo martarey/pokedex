@@ -1,9 +1,9 @@
 import React from 'react';
-import useFetch from '../hooks/useFetch';
+import useLocalData from 'hooks/useLocalData';
 
 const Evolutions = ({url}) => {
 
-    const { data, loading } = useFetch(url);
+    const { data, loading } = useLocalData(url);
 
     if (loading) {
         return <p>Cargando evoluciones...</p>
