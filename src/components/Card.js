@@ -7,7 +7,7 @@ const Card = ({item}) => {
     const { data, loading } = useFetch(item.url);
 
     if (loading) {
-        return <p>Cargando datos del Pokemon...</p>
+        return <div className="card">Cargando datos del Pokemon...</div>
     }
 
     const getTypes = (types) => types.map((type) => <span className="tag -text-tag" key={type.slot}>{type.type.name}</span>);

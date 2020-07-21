@@ -2,7 +2,7 @@ import React from 'react';
 import { API_URL } from './conf/consts';
 import useFetch from './hooks/useFetch';
 import 'App.scss';
-import CardContainer from './components/CardContainer';
+import List from './components/List';
 
 function App() {
   const { data, loading } = useFetch(API_URL);
@@ -10,7 +10,7 @@ function App() {
     return (<p>Cargando Pokemons...</p>);
   }
   return (
-    <CardContainer data={data.results}  />
+    <List data={data.results}  />
   );
 }
 
