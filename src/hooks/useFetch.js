@@ -1,3 +1,6 @@
+/**
+ * From https://github.com/ger86/coronavirus
+ */
 import { useState, useEffect } from 'react';
 
 const useFetch = (url) => {
