@@ -6,7 +6,7 @@ const List = ({data}) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
 
-    const handleChange = e => {
+    const handleChange = (e) => {
         setSearchTerm(e.target.value);
     };
 
