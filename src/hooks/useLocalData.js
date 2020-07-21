@@ -1,3 +1,6 @@
+/**
+ * From https://github.com/ger86/coronavirus
+ */
 import slugify from 'slugify';
 import useFetch from './useFetch';
 
