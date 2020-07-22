@@ -11,7 +11,9 @@ const Evolutions = ({url}) => {
     return (
         <>
             {data.evolves_from_species
-            ? <h3 className="card__extra -font-light">Evoluciona de: <span className="o-heading--h2 card__extra--ft">{data.evolves_from_species.name}</span></h3>
+            ? <h3 className="card__extra -font-light">Evoluciona de:
+                <span className="o-heading--h2 card__extra--ft">{data.evolves_from_species.name}</span>
+            </h3>
             : null}
         </>
     );
