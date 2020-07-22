@@ -12,12 +12,7 @@
             grid-template-columns: repeat(3, minmax(26rem, 32rem));
         }
         &--avoid-cols {
-            @include breakpoints(sm) {
-                grid-column: span 2;
-            }
-            @include breakpoints(md) {
-                grid-column: span 3;
-            }
+            grid-column: 1 / -1;
         }
     }
 }
