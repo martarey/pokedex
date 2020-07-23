@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Card from './Card';
+import { Link } from 'react-router-dom';
+import Card from '../UI/Card';
 
 
 const List = ({data}) => {
@@ -18,7 +19,7 @@ const List = ({data}) => {
     }, [data, searchTerm]);
     
     return (
-        <div className="o-grid">
+        <div className="o-grid o-grid--3c">
             <input
                 type="text"
                 placeholder="Filtra Pokemons por nombre..."
@@ -27,7 +28,14 @@ const List = ({data}) => {
                 className="o-grid--avoid-cols filter"
             />
             {searchResults.map((item) => (
-                <Card item={item} key={item.name} />
+                <Link to={
+                    {
+                        pathname: `/${item.name}`,
+                        url: item.url
+                    }
+                } key={item.name} >
+                    <Card url={item.url} />
+                </Link>
             ))}
         </div>
     );
