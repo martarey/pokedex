@@ -5,12 +5,13 @@ import slugify from 'slugify';
 import useFetch from './useFetch';
 
 const useLocalData = (url) => {
-
   const key = slugify(url);
 
   const fromLocalStorage = window.localStorage.getItem(key);
 
-  const dataFromLocalStorage = fromLocalStorage ? JSON.parse(fromLocalStorage) : null;
+  const dataFromLocalStorage = fromLocalStorage
+    ? JSON.parse(fromLocalStorage)
+    : null;
 
   const { data, loading } = useFetch(url);
 
@@ -20,7 +21,7 @@ const useLocalData = (url) => {
 
   return {
     data: data || dataFromLocalStorage,
-    loading: loading && !dataFromLocalStorage
+    loading: loading && !dataFromLocalStorage,
   };
 };
 
