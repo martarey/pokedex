@@ -14,6 +14,7 @@
             grid-template-columns: minmax(26rem, 102rem);
         }
         &--3c {
+            height: auto;
             @include breakpoints(sm) {
                 grid-template-columns: repeat(2, minmax(32rem, 1fr));
             }
