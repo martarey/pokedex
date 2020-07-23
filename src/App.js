@@ -14,12 +14,16 @@ function App() {
   }
 
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/" render={(props) => <List {...props} data={data.results} />} />
-        <Route path="/:name" component={Detail} />
-      </Switch>
-    </Router>
+    <div className="o-frame">
+      <div className="o-frame__top"></div>
+      <Router>
+        <Switch>
+          <Route exact path="/" render={(props) => <List {...props} data={data.results} />} />
+          <Route path="/:name" component={Detail} />
+        </Switch>
+      </Router>
+      <div className="o-frame__bottom"></div>
+    </div>
   );
 }
 
