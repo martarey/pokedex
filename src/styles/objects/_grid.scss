@@ -1,15 +1,25 @@
+#root {
+    height: 100%;
+}
+
 .o- {
     &grid {
         padding: 3rem;
+        height: 100%;
         display: grid;
         grid-gap: 3rem;
         justify-content: center;
         grid-template-columns: 1fr;
-        @include breakpoints(sm) {
-            grid-template-columns: repeat(2, minmax(32rem, 1fr));
-        }
         @include breakpoints(md) {
-            grid-template-columns: repeat(3, minmax(26rem, 32rem));
+            grid-template-columns: minmax(26rem, 102rem);
+        }
+        &--3c {
+            @include breakpoints(sm) {
+                grid-template-columns: repeat(2, minmax(32rem, 1fr));
+            }
+            @include breakpoints(md) {
+                grid-template-columns: repeat(3, minmax(26rem, 32rem));
+            }
         }
         &--avoid-cols {
             grid-column: 1 / -1;
