@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="o-frame">
       <div className="o-frame__top"></div>
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Switch>
           <Route exact path="/" render={(props) => <List {...props} data={data.results} />} />
           <Route path="/:name" component={Detail} />
