@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import useLocalData from 'hooks/useLocalData';
 import Evolutions from './Evolutions';
+import { API_URL } from 'conf/consts';
 
-const Card = ({item}) => {
+const Card = ({url}) => {
 
-    const { data, loading } = useLocalData(item.url);
+    let getDataUrl = url;
 
-    const [active, setActive] = useState(false);
+    if (!url) {
+        const location = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);
+        getDataUrl = API_URL + location;
+    }
+
+    const { data, loading } = useLocalData(getDataUrl);
 
     if (loading) {
         return <div className="card">Cargando datos del Pokemon...</div>;
@@ -16,15 +22,8 @@ const Card = ({item}) => {
 
     const types = getTypes(data.types);
 
-    const handleState = () => { setActive(!active) };
-
-    const classActive = active ? 'is-active' : '';
-
     return (
-        <div
-            onClick={handleState}
-            className={`card -full-screen ${classActive}` }
-        >
+        <div className="card -full-screen">
             <figure className="card__figure">
                 <img
                     src={data.sprites.front_default}
