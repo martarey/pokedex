@@ -4,12 +4,10 @@
 import { useState, useEffect } from 'react';
 
 const useFetch = (url) => {
-
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
-  
-  useEffect(() => {
 
+  useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(url);
@@ -19,12 +17,11 @@ const useFetch = (url) => {
       } catch (e) {
         console.error(e);
       }
-    }
+    };
     fetchData();
   }, [url]);
 
-  return {data, loading};
-
+  return { data, loading };
 };
 
 export default useFetch;

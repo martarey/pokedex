@@ -10,7 +10,7 @@ function App() {
   const { data, loading } = useLocalData(API_URL);
 
   if (loading) {
-    return (<p>Cargando Pokemons...</p>);
+    return <p>Cargando Pokemons...</p>;
   }
 
   return (
@@ -18,7 +18,11 @@ function App() {
       <div className="o-frame__top"></div>
       <Router basename={process.env.PUBLIC_URL}>
         <Switch>
-          <Route exact path="/" render={(props) => <List {...props} data={data.results} />} />
+          <Route
+            exact
+            path="/"
+            render={(props) => <List {...props} data={data.results} />}
+          />
           <Route path="/:name" component={Detail} />
         </Switch>
       </Router>
